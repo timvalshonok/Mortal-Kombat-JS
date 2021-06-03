@@ -23,24 +23,24 @@ const player2 = {
 console.log(player2.attack());
 
 
-function createPlayer(player, name, hp) {
+function createPlayer(playerId, playerName) {
 
    const $arenas = document.querySelector('.arenas');
      const $player = document.createElement('div');
-     $player.classList.add(player);
+     $player.classList.add(playerId);
         const $progressbar = document.createElement('div');
         $progressbar.classList.add('progressbar');
             const $life = document.createElement('div');
             const $name = document.createElement('div')
             $life.classList.add('life');
             $name.classList.add('name');
-                $name.innerText = name;
-                $life.style.width = hp + '%';
+                $name.innerText = playerName.name;
+                $life.style.width = playerName.hp + '%';
                 
         const $character = document.createElement('div');
         $character.classList.add('character');
                 const $img = document.createElement('img');
-                $img.src = player1.img;
+                $img.src = playerName.img;
             
 
             $arenas.appendChild($player);
@@ -51,8 +51,8 @@ function createPlayer(player, name, hp) {
             $character.appendChild($img);
 }
 
-createPlayer('player1', player1.name, player1.hp);
-createPlayer('player2', player2.name, player2.hp);
+createPlayer('player1', player1);
+createPlayer('player2', player2);
 
 
 
